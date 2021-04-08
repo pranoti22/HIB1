@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 7 Apr, 2021 9:39:15 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.perennial.HIBday1.Student" table="student">
+        <id name="rollno">
+            <generator class="assigned" />
+        </id>
+        <property name="fName" column="firstname"></property>
+         <property name="lName" column="lastname"></property>
+        <!--   <component name="addr" class="com.perennial.HIBday1.Address">
+          <property name="pin"/>
+          <property name="city"/>
+          <property name="country"/>
+          
+         </component>-->
+         <many-to-one name="addr" class="com.perennial.HIBday1.Address" unique="true"
+         not-null="false" cascade="all" column="add_id"></many-to-one>
+         
+         <set name="subject" cascade="all">
+         <key column="rollno"/>
+         <one-to-many class="com.perennial.HIBday1.Subjects"/>
+         </set>
+    </class>
+</hibernate-mapping>

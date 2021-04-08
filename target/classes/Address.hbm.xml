@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 7 Apr, 2021 9:39:15 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.perennial.HIBday1.Address" table="address">
+        <id name="addr_id" >
+           
+            <generator class="assigned" />
+        </id>
+        <property name="pin" column="pin"/>
+        <property name="city" column="city"/>
+        <property name="country" column="country"/>
+    </class>
+</hibernate-mapping>
